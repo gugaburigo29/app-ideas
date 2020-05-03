@@ -1,3 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+// Pokedex
+$colors: (
+        'brown': #8D6E63,
+        'red': #e74c3c,
+        'blue': #3498db,
+        'green': #1abc9c,
+        'amber': #FFC107,
+        'cyan': #00BCD4,
+        'orange': #FF9800,
+        'purple': #9C27B0,
+        'indigo-200': #9FA8DA,
+        'indigo-400': #5C6BC0,
+        'pink': #EC407A,
+        'light-green': #66BB6A,
+        'grey': #9E9E9E,
+);
+
 body {
   background-color: #f3f3f3;
 }
@@ -9,3 +30,66 @@ body {
 .text-left {
   text-align: left;
 }
+
+.text-center {
+  text-align: center;
+}
+
+@each $name, $color in $colors {
+  .--#{$name} {
+    background-color: $color;
+    color: white;
+  }
+}
+
+.pokedex {
+  width: 100%;
+  max-width: 450px;
+  height: 800px;
+  margin: 25px auto 0;
+  position: relative;
+  z-index: 5;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, .15);
+  border-radius: 10px;
+  overflow: hidden;
+
+  @media (max-width: 449.98px) {
+    max-width: 100%;
+    height: 100vh;
+    box-shadow: none;
+    border-radius: 0;
+    margin: auto;
+  }
+
+  &-header {
+    display: flex;
+    padding: 23px 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &-icon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  &-title {
+    flex: 0 0 100%;
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  &-background {
+    position: absolute;
+    z-index: -1;
+    height: 250px;
+    width: 250px;
+    background: url(../assets/pokedex/pokeball_dark.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: .1;
+  }
+}
+// Pokedex

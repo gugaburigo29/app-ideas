@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Pokedex from "../views/pokedex/Pokedex.vue";
+import Pokemon from "@/views/pokedex/Pokemon.vue";
 
 Vue.use(VueRouter);
 
@@ -12,12 +13,14 @@ const routes = [
         component: Home
     },
     {
-        path: '/pokedex',
+        path: '/pokedex/',
         name: 'Pokedex',
         component: Pokedex,
-        children: [
-
-        ]
+    },
+    {
+        path: '/pokedex/:num',
+        name: 'Pokemon',
+        component: Pokemon,
     }
 ];
 
