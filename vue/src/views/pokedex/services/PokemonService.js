@@ -11,6 +11,9 @@ class PokemonService {
         return pokedexStats.find(pokemon => pokemon.id === id);
     }
 
+    static getPokemonStatsBaseById(id) {
+        return this.getPokemonStatsById(id).base;
+    }
 }
 
 export default PokemonService;
